@@ -23,9 +23,9 @@ public class Assignment {
 	
 	public String accessToken,username,password;
 			
-	@DataProvider(name="adminLogin")
+	@Test @DataProvider(name="adminLogin")
 	public Object[][] loginData() throws BiffException, IOException {
-		Object[][] arrayObject = getExcelData("D:/sampledoc.xls","Sheet1");
+		Object[][] arrayObject = getExcelData("src\\test\\resources\\RestTestData.xls","TC002");
 		return arrayObject;
 	}
 
@@ -48,6 +48,7 @@ public class Assignment {
 				for (int j=0; j < totalNoOfCols; j++) 
 				{
 					arrayExcelData[i-1][j] = sh.getCell(j, i).getContents();
+					System.out.println(arrayExcelData[i-1][j]);
 				}
 
 			}
@@ -56,19 +57,8 @@ public class Assignment {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 	
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void TC_001() {
 		
 		basicAuthentication();
@@ -76,7 +66,7 @@ public class Assignment {
 
 	}
 
-	@Test(dataProvider="empLogin",enabled=true)
+	@Test(enabled=true)
 	public void TC_002() {
 		basicAuthentication();
 		login();
@@ -84,7 +74,7 @@ public class Assignment {
 		Logout();
 
 	}
-	@Test(dataProvider="empLogin",enabled=true)
+	@Test(enabled=true)
 	public void TC_015() {
 		basicAuthentication();
 		login();
@@ -92,7 +82,7 @@ public class Assignment {
 		Logout();
 
 	}
-	@Test(dataProvider="empLogin",enabled=true)
+	@Test(enabled=true)
 	public void TC_021() {
 		basicAuthentication();
 		login();
@@ -134,7 +124,7 @@ public class Assignment {
 			    String jsonResp = response.asString();
 				JsonPath responseBody = new JsonPath(jsonResp);
 				accessToken=responseBody.get("data.access_token");
-				System.out.println("The AccessToken is "+accessToken);
+				//System.out.println("The AccessToken is "+accessToken);
 		
 	}
 	
@@ -149,6 +139,7 @@ public class Assignment {
 			.get("/api/rest_admin/user")
 			.then()
 			.assertThat().statusCode(200).extract().response();
+		System.out.println(response.asString());
 	}
 	
 	public void Login()
@@ -162,7 +153,7 @@ public class Assignment {
 			.post("/api/rest_admin/login")
 			.then()
 			.assertThat().statusCode(200).extract().response();
-		
+		System.out.println(response.asString());
 	}
 	
 	public void Logout()
@@ -176,7 +167,7 @@ public class Assignment {
 			.post("/api/rest_admin/logout")
 			.then()
 			.assertThat().statusCode(200).extract().response();
-		
+		System.out.println(response.asString());
 	}
 	
 	public void GetCategoryFilterBylimitPage()
@@ -191,7 +182,7 @@ public class Assignment {
 			
 			.then()
 			.assertThat().statusCode(200).header("x-pagination-limit",equalTo("6")).extract().response();
-
+		System.out.println(response.asString());
 		
 	}
 	
@@ -207,7 +198,7 @@ public class Assignment {
 			
 			.then()
 			.assertThat().statusCode(200).header("x-pagination-limit",equalTo("2")).extract().response();
-		
+		System.out.println(response.asString());
 	}
 
 }

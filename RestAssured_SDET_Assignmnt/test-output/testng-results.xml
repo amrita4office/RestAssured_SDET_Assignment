@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="4313" started-at="2021-08-13T11:49:33Z" finished-at="2021-08-13T11:49:37Z">
+  <suite name="Default suite" duration-ms="15261" started-at="2021-08-15T16:00:57Z" finished-at="2021-08-15T16:01:13Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="4313" started-at="2021-08-13T11:49:33Z" finished-at="2021-08-13T11:49:37Z">
+    <test name="Default test" duration-ms="15261" started-at="2021-08-15T16:00:57Z" finished-at="2021-08-15T16:01:13Z">
       <class name="Assignment.Assignment">
-        <test-method status="PASS" signature="TC_002()[pri:0, instance:Assignment.Assignment@1ffe63b9]" name="TC_002" duration-ms="4279" started-at="2021-08-13T17:19:33Z" finished-at="2021-08-13T17:19:37Z">
+        <test-method status="PASS" signature="TC_001()[pri:0, instance:Assignment.Assignment@161479c6]" name="TC_001" duration-ms="4590" started-at="2021-08-15T21:30:57Z" finished-at="2021-08-15T21:31:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_001 -->
+        <test-method status="PASS" signature="TC_002()[pri:0, instance:Assignment.Assignment@161479c6]" name="TC_002" duration-ms="4295" started-at="2021-08-15T21:31:02Z" finished-at="2021-08-15T21:31:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC_002 -->
+        <test-method status="PASS" signature="TC_015()[pri:0, instance:Assignment.Assignment@161479c6]" name="TC_015" duration-ms="2749" started-at="2021-08-15T21:31:06Z" finished-at="2021-08-15T21:31:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_015 -->
+        <test-method status="PASS" signature="TC_021()[pri:0, instance:Assignment.Assignment@161479c6]" name="TC_021" duration-ms="3549" started-at="2021-08-15T21:31:09Z" finished-at="2021-08-15T21:31:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_021 -->
       </class> <!-- Assignment.Assignment -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
